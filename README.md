@@ -49,16 +49,16 @@ Things you may want to cover:
 |------|----|-------|
 |body|text|null: false|
 |group_id|integer|null: false, foreign_key: true|
-|tweet_id|integer|null: false, foreign_key: true|
+|message_id|integer|null: false, foreign_key: true|
 
 ### Association
 - has_many :groups, through :groups_users
 - has_many :groups_users
-- has_many :tweets
+- has_many :messages
 
 
 
-## tweetsテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |body|text|null: false|
