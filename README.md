@@ -31,8 +31,8 @@ Things you may want to cover:
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :groups
-- belongs_to :users
+- belongs_to :group
+- belongs_to :user
 
 ## groupsテーブル
 |Column|Type|Options|
@@ -54,8 +54,7 @@ Things you may want to cover:
 ### Association
 - has_many :groups, through :groups_users
 - has_many :groups_users
-- has_many :tweets, through :users_tweets
-- has_many :users_tweets
+- has_many :tweets
 
 
 
@@ -66,15 +65,5 @@ Things you may want to cover:
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
-- has_many :users , through :users_tweets
-- has_many :users_tweets
+- belongs_to :user
 
-## users_tweetsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|tweet_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :users
-- belongs_to :tweets
