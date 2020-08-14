@@ -1,0 +1,26 @@
+.Main-chat
+  .Header
+    .Top-left
+      %p.Top-left__group test
+      %p.Top-left__member Member :masa
+    .Top-right
+      = link_to "#", class: "Top-right__edit-btn" do
+        Edit
+  .Message-list
+    .List-name
+      %p.List-name__member masa
+      %p.List-name__time 2019/11/20(Wed) 17:43:01
+    %p.List-message おはよう！
+    .List-name
+      %p.List-name__member masa 
+      %p.List-name__time 2019/11/20(Wed) 17:43:34
+    %p.List-message 今日は夜から雨
+  .Footer
+    %form.Form-left
+      %input.Form-left__text{"placeholder": "type a message", "type": "text"}
+      %label{class: "Form-left__image-btn"}
+        = icon('far', 'image')
+        %input{type: "file", class: "Form-left__image-btn--hidden"}
+    .Form-right
+      = link_to "#", class: "Form-right__send-btn" do
+        Send
