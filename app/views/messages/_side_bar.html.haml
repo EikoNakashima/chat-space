@@ -1,12 +1,17 @@
 .Side-bar
   .User-name
     .Box
-      %p.Box__left masa
+      %p.Box__left
+        = current_user.name
       .Box__right
         = link_to "#" do
           = icon('far', 'edit',  class: "Box__right--left-icon")
-        = link_to "#" do
+        = link_to edit_user_path(current_user) do
           = icon('fas', 'cog',  class: "Box__right--right-icon")
   .Group-list
-    %p.Group-list__name techcamp
-    %p.Group-list__message まだメッセージがありません
+    .Group
+      = link_to "#" do
+        .Group__name
+          techcamp
+        .Group__message
+          最新のメッセージ
