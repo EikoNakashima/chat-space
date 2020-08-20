@@ -4,7 +4,11 @@
       %p.Box__left
         = current_user.name
       .Box__right
+<<<<<<< Updated upstream
         = link_to new_group_path do
+=======
+        = link_to edit_group_path(current_user) do
+>>>>>>> Stashed changes
           = icon('far', 'edit',  class: "Box__right--left-icon")
         = link_to edit_user_path(current_user) do
           = icon('fas', 'cog',  class: "Box__right--right-icon")
