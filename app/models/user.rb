@@ -5,13 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
 
-<<<<<<< Updated upstream
   has_many :group_users
   has_many :groups, through: :group_users
 
-=======
-         
-  has_many :group_users
-  has_many :groups, through: :group_users
->>>>>>> Stashed changes
 end
