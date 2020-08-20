@@ -4,14 +4,15 @@
       %p.Box__left
         = current_user.name
       .Box__right
-        = link_to "#" do
+        = link_to new_group_path do
           = icon('far', 'edit',  class: "Box__right--left-icon")
         = link_to edit_user_path(current_user) do
           = icon('fas', 'cog',  class: "Box__right--right-icon")
   .Group-list
-    .Group
-      = link_to "#" do
-        .Group__name
-          techcamp
-        .Group__message
-          最新のメッセージ
+    - current_user.groups.each do |group|
+      .Group
+        = link_to "#" do
+          .Group__name
+            = group.name
+          .Group__message
+            メッセージはまだありません
