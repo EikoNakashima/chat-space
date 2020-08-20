@@ -22,10 +22,7 @@ class GroupsController < ApplicationController
   end
 
   def edit
-<<<<<<< Updated upstream
     @group = Group.find(params[:id])
-=======
->>>>>>> Stashed changes
   end
 
   def update
@@ -39,11 +36,7 @@ class GroupsController < ApplicationController
 
   private
   def group_params
-<<<<<<< Updated upstream
     params.require(:group).permit(:name, user_ids: [])
-=======
-    params.require(:group).permit(:name, user_ids: [] )
->>>>>>> Stashed changes
   end
 
 end
