@@ -1,26 +1,22 @@
 .Main-chat
   .Header
     .Top-left
-      %p.Top-left__group test
-      %p.Top-left__member Member :masa
+      .Top-left__group
+        = @group.name
+      %p.Top-left__member 
+        - @group.users.each do |user|
+          = user.name
     .Top-right
-      = link_to "#", class: "Top-right__edit-btn" do
+      = link_to edit_group_path(@group), class: "Top-right__edit-btn" do
         Edit
-  .Message-list
-    .List-name
-      %p.List-name__member masa
-      %p.List-name__time 2019/11/20(Wed) 17:43:01
-    %p.List-message おはよう！
-    .List-name
-      %p.List-name__member masa 
-      %p.List-name__time 2019/11/20(Wed) 17:43:34
-    %p.List-message 今日は夜から雨
+  .MessageField
+    = render @messages
   .Footer
-    %form.Form-left
-      %input.Form-left__text{"placeholder": "type a message", "type": "text"}
-      %label{class: "Form-left__image-btn"}
-        = icon('far', 'image')
-        %input{type: "file", class: "Form-left__image-btn--hidden"}
-    .Form-right
-      = link_to "#", class: "Form-right__send-btn" do
-        Send
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
+      .Form-left
+        = f.text_field :content, class: "Form-left__text", placeholder: 'type a message'
+        = f.label :image, class: "Form-left__image-btn" do
+          = icon('far', 'image', class: 'Form-left__icon')
+          = f.file_field :image, class: "Form-left__image-btn--hidden" 
+      .Form-right
+        = f.submit 'Send', class: "Form-right__send-btn"    
