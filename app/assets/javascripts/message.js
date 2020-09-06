@@ -59,7 +59,7 @@ $(function(){
       $('form')[0].reset();
     })
     .always(() => {
-    $('.Form-right__send-btn').removeAttr('disabled');
+    $('.Form-right__send-btn').prop("disabled", false);
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
