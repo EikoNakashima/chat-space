@@ -56,6 +56,7 @@ $(function(){
       let html = buildHTML(data);
       $('.MessageField').append(html);
       $('form')[0].reset();
+      $('.MessageField').animate({ scrollTop: $('.MessageField')[0].scrollHeight});
     })
     .always(() => {
     $('.Form-right__send-btn').prop("disabled", false);
